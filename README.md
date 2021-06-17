@@ -1,6 +1,6 @@
 # work-day-scheduler
 
-GIVEN I am using a daily planner to create a schedule
+GIVEN I am using a daily planner to create a schedule <br>
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar
 WHEN I scroll down
