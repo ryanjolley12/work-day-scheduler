@@ -1,4 +1,44 @@
+var date = moment();
+
+document.getElementById("currentDay").textContent = date; 
+// give each row a # id 
+// if the hour is more than the current time, box is already past 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // create h1 element.textcontent append onto body
+
 // create "time" h2 element, display time here using moment.js , update it by seconds 
 //create object, import moment, assign time to new var 
 // create interval "date/time" setInterval --get time every second and update with new h2
