@@ -1,3 +1,5 @@
+// worked with Ani on code 
+
 var date = moment();
 console.log(date);
 
@@ -36,27 +38,39 @@ $("#row9 .description").val(localStorage.getItem("row9"));
 
 $("#row10 .description").val(localStorage.getItem("row10"));
 
+$("#row3 .description").val(localStorage.getItem("row3"));
+
 $("#row5 .description").val(localStorage.getItem("row5"));
 
 //IF/THEN STATEMENTS: EX. IF currentTime > 9am, label as past; if currentTime < 9am, label as future; if currentTime = 9am, label as now 
 
+var hour =moment().hour();
+console.log(hour)
 
-if (currentHour < nine) {
+if (hour < nine) {
     $("#text9").addClass("future");
-} else if (currentHour > nine) {
+} else if (hour > nine) {
     $("#text9").addClass("past");
-} else if (currentHour = nine) {
+} else if (hour = nine) {
     $("#text9").addClass("present");
 }
 
-if (currentHour < five) {
-    $("#text5").addClass("future");
-} else if (currentHour > nine) {
-    $("#text5").addClass("past");
-} else if (currentHour = nine) {
-    $("#text5").addClass("present");
+if (hour < three) {
+    console.log(three);
+    $("#text9").addClass("future");
+} else if (hour > three) {
+    $("#text9").addClass("past");
+} else if (hour = three) {
+    $("#text9").addClass("present");
 }
 
+if (hour < five) {
+    $("#text5").addClass("future");
+} else if (hour > nine) {
+    $("#text5").addClass("past");
+} else if (hour = nine) {
+    $("#text5").addClass("present");
+}
 
 
 
