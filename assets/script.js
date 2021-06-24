@@ -7,6 +7,59 @@ document.getElementById("currentDay").textContent = date;
 
 
 
+// find out what the hour value is at the specific time we click 
+// set the row as an hour class 
+// use this.attr to take the value of that number and figure out what the time should be for that block 
+
+// local storage -- okay to repeat each way for retreiving from local storage 
+
+
+// if current time > 9 label as past; if currentTime < 9 label as futre ; if = present 
+
+
+
+var currentTime = moment().format('h:mm');
+console.log(currentTime);
+
+
+
+
+
+
+
+var currentDay = document.createElement("p");
+// currentDay = moment().format("YYYY-MM-DD");
+currentDay.innerHTML = moment().format("MMM DD, YYYY - hh:mm a");
+timeNow.appendChild(currentDay) // Append to <p> with id of timeNow in the HTML doc
+console.log(moment()); //console log because it's a good practice to do so
+
+// WHEN USER CLICKS SAVE, THE TEXT VALUE IS OBTAINED
+$(".saveBtn").on("click", function () {
+    // OBTAIN TEXT VALUES FROM ROW CLASS AND ID 
+    var textValue = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+
+    // SET TO SAVE IN LOCALSTORAGE
+    localStorage.setItem(time, textValue);
+});
+
+//MAKE READABLE TIME VARIABLES BUT KEEP NECCESSARY NUMERIC VALUE
+var nine = 9;
+var ten = 10;
+var eleven = 11;
+var twelve = 12;
+var one = 13;
+var two = 14;
+var three = 15;
+var four = 16;
+var five = 17;
+
+// OBTAIN DATA FROM LOCALSTORAGE FOR EACH ROW USING ID AND CLASS NAME
+$("#row8 .description").val(localStorage.getItem("row9"));
+
+$("#row9 .description").val(localStorage.getItem("row9"));
+
+$("#row10 .description").val(localStorage.getItem("row10"));
 
 
 
@@ -36,33 +89,3 @@ document.getElementById("currentDay").textContent = date;
 
 
 
-
-// create h1 element.textcontent append onto body
-
-// create "time" h2 element, display time here using moment.js , update it by seconds 
-//create object, import moment, assign time to new var 
-// create interval "date/time" setInterval --get time every second and update with new h2
-// don't clear this interval 
-// hourly divs : display time, display input box, and save button
-// createElement div
-// bootstrap for rows/columns 
-// each div has different times/values/ and different save buttons 
-// for loop for variable i=8 to 16
-// create an element div to each element you created
-// add input box when variable i is here time is 08:00 then 09:00 then 1000
-// give ID's for all of the input boxes and save buttons (based on their hours)
-// saveBtn800 saveBtn900
-
-
-// add event listeners to the page 
-// dynamic elements get listened to differently than statically rendered 
-// document.clickEventListener 
-
-// want to do the same thing for every single div 
-// time, box, save button
-
-// document.addEventListener ("onChange", "grab the value of this text box and using the assigne id, create a localStorage the key to which is this id and the value is whatever value is inside this input box")
-// all the divs are similar: put them in a for loop and set TIME based on that for loop 
-// in the same for loop that you're creating time variables need to create other variables as well 
-
-// listen on events, if it changes, go to local storage, grab it and change it 
